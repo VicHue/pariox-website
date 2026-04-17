@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pariox — Private AI for IT Helpdesks & Small Businesses</title>
+<meta name="description" content="Custom fine-tuned AI models for MSPs, law firms, and businesses that need AI without the data exposure. Trained on your data, deployed on your hardware, owned by you.">
+<meta property="og:title" content="Pariox — Private AI trained on your data">
+<meta property="og:description" content="Fine-tuned AI models for small businesses. Runs on your hardware. No data ever leaves your network.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔒</text></svg>">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Inter",sans-serif;background:#0a0f0d;color:#e5e7eb;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:#10b981;text-decoration:none}
+a:hover{text-decoration:underline}
+.container{max-width:1080px;margin:0 auto;padding:0 24px}
+
+/* Navigation */
+.nav{padding:20px 0;position:sticky;top:0;background:rgba(10,15,13,0.85);backdrop-filter:blur(12px);z-index:100;border-bottom:1px solid rgba(255,255,255,0.04)}
+.nav-inner{display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:20px;font-weight:700;letter-spacing:-0.02em;color:#fff}
+.logo span{color:#10b981}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{color:#9ca3af;font-size:14px;font-weight:500}
+.nav-links a:hover{color:#fff;text-decoration:none}
+.nav-cta{background:#10b981;color:#fff !important;padding:8px 16px;border-radius:8px;font-weight:500}
+.nav-cta:hover{background:#059669;text-decoration:none !important}
+@media(max-width:640px){.nav-links a:not(.nav-cta){display:none}}
+
+/* Hero */
+.hero{padding:80px 0 60px;text-align:center}
+.hero-tag{display:inline-block;font-size:12px;font-weight:600;color:#10b981;background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.25);padding:6px 14px;border-radius:999px;margin-bottom:24px;text-transform:uppercase;letter-spacing:0.08em}
+.hero h1{font-size:clamp(32px,5vw,52px);font-weight:700;letter-spacing:-0.03em;line-height:1.1;margin-bottom:20px;color:#fff}
+.hero h1 span{color:#10b981}
+.hero p{font-size:clamp(16px,2vw,19px);color:#9ca3af;max-width:640px;margin:0 auto 36px;line-height:1.6}
+.hero-buttons{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-primary{background:#10b981;color:#fff;padding:14px 28px;border-radius:10px;font-weight:600;font-size:15px;transition:all 0.2s;display:inline-flex;align-items:center;gap:8px}
+.btn-primary:hover{background:#059669;text-decoration:none;transform:translateY(-1px)}
+.btn-secondary{background:transparent;color:#e5e7eb;padding:14px 28px;border-radius:10px;font-weight:500;font-size:15px;border:1px solid rgba(255,255,255,0.15);transition:all 0.2s}
+.btn-secondary:hover{border-color:rgba(255,255,255,0.3);text-decoration:none;background:rgba(255,255,255,0.03)}
+
+/* Proof strip */
+.proof-strip{padding:30px 0;border-top:1px solid rgba(255,255,255,0.04);border-bottom:1px solid rgba(255,255,255,0.04);margin-top:40px}
+.proof-text{text-align:center;font-size:13px;color:#6b7280;text-transform:uppercase;letter-spacing:0.1em;font-weight:500}
+
+/* Section */
+.section{padding:80px 0}
+.section-label{display:block;text-align:center;font-size:12px;font-weight:600;color:#10b981;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:16px}
+.section h2{font-size:clamp(28px,4vw,40px);font-weight:700;letter-spacing:-0.02em;text-align:center;margin-bottom:16px;color:#fff;line-height:1.2}
+.section-sub{text-align:center;font-size:17px;color:#9ca3af;max-width:620px;margin:0 auto 56px;line-height:1.6}
+
+/* Problem/solution grid */
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:820px){.grid-3{grid-template-columns:1fr}}
+.card{background:#111816;border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:28px}
+.card-icon{width:42px;height:42px;background:rgba(16,185,129,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;color:#10b981;font-size:20px;font-weight:700}
+.card h3{font-size:17px;font-weight:600;color:#fff;margin-bottom:8px;letter-spacing:-0.01em}
+.card p{font-size:14px;color:#9ca3af;line-height:1.6}
+
+/* Comparison */
+.compare{background:#0d1310;padding:80px 0}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:880px;margin:0 auto}
+@media(max-width:640px){.compare-grid{grid-template-columns:1fr}}
+.compare-card{background:#111816;border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:28px}
+.compare-card.highlight{border-color:rgba(16,185,129,0.4);background:rgba(16,185,129,0.03)}
+.compare-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:#6b7280;margin-bottom:14px}
+.compare-card.highlight .compare-label{color:#10b981}
+.compare-title{font-size:18px;font-weight:600;color:#fff;margin-bottom:18px;letter-spacing:-0.01em}
+.compare-list{list-style:none}
+.compare-list li{padding:8px 0;font-size:14px;color:#9ca3af;display:flex;align-items:flex-start;gap:10px;border-top:1px solid rgba(255,255,255,0.04)}
+.compare-list li:first-child{border-top:none}
+.compare-list li::before{content:"✗";color:#ef4444;font-weight:700;flex-shrink:0;margin-top:1px}
+.compare-card.highlight .compare-list li::before{content:"✓";color:#10b981}
+
+/* Process */
+.process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;position:relative}
+@media(max-width:820px){.process-grid{grid-template-columns:1fr}}
+.step{background:#111816;border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:28px;position:relative}
+.step-num{position:absolute;top:-14px;left:28px;background:#10b981;color:#fff;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700}
+.step h3{font-size:17px;font-weight:600;color:#fff;margin:8px 0 10px;letter-spacing:-0.01em}
+.step p{font-size:14px;color:#9ca3af;line-height:1.6}
+
+/* Pricing */
+.pricing{background:#0d1310;padding:80px 0}
+.pricing-card{max-width:520px;margin:0 auto;background:#111816;border:1px solid rgba(16,185,129,0.3);border-radius:16px;padding:40px;text-align:center}
+.pricing-tier{font-size:12px;font-weight:600;color:#10b981;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:12px}
+.pricing-amount{font-size:48px;font-weight:700;color:#fff;letter-spacing:-0.03em;margin-bottom:4px}
+.pricing-amount span{font-size:18px;color:#9ca3af;font-weight:500}
+.pricing-sub{font-size:14px;color:#9ca3af;margin-bottom:28px}
+.pricing-features{text-align:left;margin-bottom:28px;border-top:1px solid rgba(255,255,255,0.06);padding-top:24px}
+.pricing-features li{list-style:none;padding:10px 0;font-size:14px;color:#d1d5db;display:flex;align-items:flex-start;gap:10px}
+.pricing-features li::before{content:"✓";color:#10b981;font-weight:700}
+
+/* Who it's for */
+.verticals{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:880px;margin:0 auto}
+@media(max-width:820px){.verticals{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.verticals{grid-template-columns:1fr}}
+.vertical{background:#111816;border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:20px;text-align:center;transition:border-color 0.2s}
+.vertical:hover{border-color:rgba(16,185,129,0.3)}
+.vertical-icon{font-size:28px;margin-bottom:10px}
+.vertical-name{font-size:14px;font-weight:600;color:#fff;margin-bottom:4px}
+.vertical-use{font-size:12px;color:#9ca3af;line-height:1.5}
+
+/* CTA section */
+.cta{padding:100px 0;text-align:center}
+.cta h2{margin-bottom:20px}
+.cta p{font-size:17px;color:#9ca3af;max-width:540px;margin:0 auto 32px;line-height:1.6}
+
+/* Footer */
+.footer{border-top:1px solid rgba(255,255,255,0.06);padding:32px 0;margin-top:40px}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.footer-left{font-size:14px;color:#6b7280}
+.footer-right{display:flex;gap:24px}
+.footer-right a{font-size:14px;color:#9ca3af}
+.footer-right a:hover{color:#fff;text-decoration:none}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="#" class="logo">🔒 Pariox<span>.</span></a>
+    <div class="nav-links">
+      <a href="#how">How it works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="https://huggingface.co/spaces/VicHue/pariox-helpdesk-demo" class="nav-cta" target="_blank" rel="noopener">Try live demo →</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <span class="hero-tag">🔒 Private · Fine-tuned · Owned by you</span>
+    <h1>AI that knows your business.<br><span>Runs on your hardware.</span></h1>
+    <p>Custom fine-tuned language models for MSPs, law firms, and businesses that need AI without the data exposure. Trained on your procedures. Deployed on your infrastructure. Yours to keep.</p>
+    <div class="hero-buttons">
+      <a href="https://huggingface.co/spaces/VicHue/pariox-helpdesk-demo" class="btn-primary" target="_blank" rel="noopener">Try the live demo →</a>
+      <a href="#how" class="btn-secondary">How it works</a>
+    </div>
+  </div>
+</section>
+
+<div class="proof-strip">
+  <div class="container">
+    <p class="proof-text">Built for businesses that can't afford to leak their data</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <span class="section-label">What you get</span>
+    <h2>Not another ChatGPT wrapper.</h2>
+    <p class="section-sub">Most "AI for business" tools upload your documents to OpenAI's servers and search them at runtime. That's a compliance problem, not a solution. Here's what's different.</p>
+
+    <div class="grid-3">
+      <div class="card">
+        <div class="card-icon">🔒</div>
+        <h3>Private by default</h3>
+        <p>Your data never leaves your network. Not during training. Not during use. The model runs on your hardware, behind your firewall, under your control.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🎯</div>
+        <h3>Trained on your world</h3>
+        <p>The model learns your procedures, your clients, your escalation paths during training — not generic internet data. It answers like one of your team, not like Google.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">💎</div>
+        <h3>You own the asset</h3>
+        <p>Not a subscription you rent. It's your model, permanently, on your infrastructure. Cancel anytime and keep everything. No vendor lock-in, no per-user fees.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="compare">
+  <div class="container">
+    <span class="section-label">The difference</span>
+    <h2>Wrapper vs. fine-tuned model</h2>
+    <p class="section-sub">They look the same in a demo. They are not the same product.</p>
+
+    <div class="compare-grid">
+      <div class="compare-card">
+        <div class="compare-label">ChatGPT wrapper / Copilot</div>
+        <div class="compare-title">Your data visits OpenAI every query</div>
+        <ul class="compare-list">
+          <li>Data uploaded to third-party servers</li>
+          <li>Generic answers from internet knowledge</li>
+          <li>Monthly per-user subscriptions forever</li>
+          <li>Vendor changes = your tool changes</li>
+          <li>Requires internet connection</li>
+          <li>Doesn't know your clients or systems</li>
+        </ul>
+      </div>
+      <div class="compare-card highlight">
+        <div class="compare-label">Pariox fine-tuned model</div>
+        <div class="compare-title">Your data stays on your hardware</div>
+        <ul class="compare-list">
+          <li>Zero data leaves your network</li>
+          <li>Trained on your actual workflows</li>
+          <li>One-time build fee, you own it</li>
+          <li>No vendor dependency</li>
+          <li>Works completely offline</li>
+          <li>Knows your clients, systems, shorthand</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="how">
+  <div class="container">
+    <span class="section-label">How it works</span>
+    <h2>From your data to working AI in 2–3 weeks</h2>
+    <p class="section-sub">A simple, transparent process. Same methodology used by enterprise consulting firms that charge 10–50× more.</p>
+
+    <div class="process-grid">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>You send your data</h3>
+        <p>Ticket history, documentation, standard procedures — exported from your ticketing system. Transferred via encrypted channel. Never touches a third-party server.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>I fine-tune the model</h3>
+        <p>Using LoRA/QLoRA methodology on a local GPU. The model learns your specific workflows, terminology, and escalation logic. Training stays on my machine — nothing uploaded.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>You deploy on your hardware</h3>
+        <p>Full delivery of model weights, inference scripts, and deployment documentation. Runs on your server or workstation. All my copies of your data deleted in writing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <span class="section-label">Built for</span>
+    <h2>Businesses with knowledge worth protecting</h2>
+    <p class="section-sub">If you have internal procedures your staff reference every day, and clients whose data can't leave your network, you're the target.</p>
+
+    <div class="verticals">
+      <div class="vertical">
+        <div class="vertical-icon">🖥️</div>
+        <div class="vertical-name">MSPs</div>
+        <div class="vertical-use">Tier 1 ticket deflection, knowledge retention</div>
+      </div>
+      <div class="vertical">
+        <div class="vertical-icon">⚖️</div>
+        <div class="vertical-name">Law firms</div>
+        <div class="vertical-use">Case file Q&A, clause references</div>
+      </div>
+      <div class="vertical">
+        <div class="vertical-icon">📊</div>
+        <div class="vertical-name">Accounting</div>
+        <div class="vertical-use">Client intake, tax code lookup</div>
+      </div>
+      <div class="vertical">
+        <div class="vertical-icon">🏢</div>
+        <div class="vertical-name">Property mgmt</div>
+        <div class="vertical-use">Lease clauses, maintenance triage</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing" id="pricing">
+  <div class="container">
+    <span class="section-label">Pricing</span>
+    <h2>Transparent. Flat-rate. You own it.</h2>
+    <p class="section-sub">No seat-based pricing. No per-query fees. No vendor lock-in.</p>
+
+    <div class="pricing-card">
+      <div class="pricing-tier">Custom Fine-Tuned Model</div>
+      <div class="pricing-amount">$1,500 <span>build</span></div>
+      <div class="pricing-sub">+ $300/month optional retainer for retraining & support</div>
+
+      <ul class="pricing-features">
+        <li>Custom model trained on your data</li>
+        <li>LoRA/QLoRA fine-tuning on 500–2,000 examples</li>
+        <li>Deployment on your hardware</li>
+        <li>Full delivery: weights, scripts, documentation</li>
+        <li>2–3 week timeline from kickoff</li>
+        <li>50% deposit, 50% on delivery</li>
+        <li>No long-term contracts — you own everything</li>
+      </ul>
+
+      <a href="mailto:victor@pariox.co?subject=Interested in Pariox" class="btn-primary" style="width:100%;justify-content:center">Start a conversation →</a>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <span class="section-label">See it in action</span>
+    <h2>The best proof is a live demo.</h2>
+    <p>Try a working fine-tuned helpdesk model right now. Ask it any IT support question and see what "trained on domain data" actually looks like.</p>
+    <a href="https://huggingface.co/spaces/VicHue/pariox-helpdesk-demo" class="btn-primary" target="_blank" rel="noopener">Launch live demo →</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-left">© 2026 Pariox · Built by Victor Huerta · Bellingham, WA</div>
+    <div class="footer-right">
+      <a href="mailto:victor@pariox.co">victor@pariox.co</a>
+      <a href="https://github.com/VicHue" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://huggingface.co/VicHue" target="_blank" rel="noopener">Hugging Face</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
