@@ -3,233 +3,391 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pariox — Private AI for IT Helpdesks & Small Businesses</title>
-<meta name="description" content="Custom fine-tuned AI models for MSPs, law firms, and businesses that need AI without the data exposure. Trained on your data, deployed on your hardware, owned by you.">
-<meta property="og:title" content="Pariox — Private AI trained on your data">
-<meta property="og:description" content="Fine-tuned AI models for small businesses. Runs on your hardware. No data ever leaves your network.">
+<title>Pariox — Private AI for Modern Businesses</title>
+<meta name="description" content="Custom fine-tuned AI models deployed on your infrastructure. For MSPs, law firms, and businesses that demand data sovereignty. Own your intelligence.">
+<meta property="og:title" content="Pariox — Own Your Intelligence">
+<meta property="og:description" content="Private, fine-tuned AI models deployed on your hardware. Not a subscription. An asset.">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔒</text></svg>">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Inter",sans-serif;background:#0a0f0d;color:#e5e7eb;line-height:1.6;-webkit-font-smoothing:antialiased}
-a{color:#10b981;text-decoration:none}
-a:hover{text-decoration:underline}
-.container{max-width:1080px;margin:0 auto;padding:0 24px}
+body{font-family:-apple-system,BlinkMacSystemFont,"Inter","Segoe UI",sans-serif;background:#050607;color:#e4e7e9;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:#10b981;text-decoration:none;transition:color 0.2s}
+a:hover{color:#34d399}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
 
 /* Navigation */
-.nav{padding:20px 0;position:sticky;top:0;background:rgba(10,15,13,0.85);backdrop-filter:blur(12px);z-index:100;border-bottom:1px solid rgba(255,255,255,0.04)}
+.nav{padding:18px 0;position:sticky;top:0;background:rgba(5,6,7,0.8);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);z-index:100;border-bottom:1px solid rgba(255,255,255,0.04)}
 .nav-inner{display:flex;justify-content:space-between;align-items:center}
-.logo{font-size:20px;font-weight:700;letter-spacing:-0.02em;color:#fff}
-.logo span{color:#10b981}
-.nav-links{display:flex;gap:28px;align-items:center}
+.logo{font-size:19px;font-weight:700;letter-spacing:-0.03em;color:#fff;display:flex;align-items:center;gap:8px}
+.logo-dot{width:10px;height:10px;border-radius:50%;background:#10b981;box-shadow:0 0 14px #10b981,0 0 28px rgba(16,185,129,0.4)}
+.nav-links{display:flex;gap:32px;align-items:center}
 .nav-links a{color:#9ca3af;font-size:14px;font-weight:500}
-.nav-links a:hover{color:#fff;text-decoration:none}
-.nav-cta{background:#10b981;color:#fff !important;padding:8px 16px;border-radius:8px;font-weight:500}
-.nav-cta:hover{background:#059669;text-decoration:none !important}
-@media(max-width:640px){.nav-links a:not(.nav-cta){display:none}}
+.nav-links a:hover{color:#fff}
+.nav-cta{background:#fff;color:#050607 !important;padding:9px 18px;border-radius:8px;font-weight:600;font-size:13.5px !important;transition:all 0.2s}
+.nav-cta:hover{background:#10b981;color:#fff !important}
+@media(max-width:720px){.nav-links a:not(.nav-cta){display:none}}
 
-/* Hero */
-.hero{padding:80px 0 60px;text-align:center}
-.hero-tag{display:inline-block;font-size:12px;font-weight:600;color:#10b981;background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.25);padding:6px 14px;border-radius:999px;margin-bottom:24px;text-transform:uppercase;letter-spacing:0.08em}
-.hero h1{font-size:clamp(32px,5vw,52px);font-weight:700;letter-spacing:-0.03em;line-height:1.1;margin-bottom:20px;color:#fff}
-.hero h1 span{color:#10b981}
-.hero p{font-size:clamp(16px,2vw,19px);color:#9ca3af;max-width:640px;margin:0 auto 36px;line-height:1.6}
+/* Hero — Authect-style bold statement */
+.hero{padding:100px 0 80px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:800px;height:800px;background:radial-gradient(circle,rgba(16,185,129,0.08) 0%,transparent 60%);pointer-events:none;z-index:0}
+.hero-inner{position:relative;z-index:1}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:500;color:#10b981;background:rgba(16,185,129,0.06);border:1px solid rgba(16,185,129,0.2);padding:7px 16px;border-radius:999px;margin-bottom:32px;letter-spacing:0.02em}
+.hero-tag::before{content:"";width:6px;height:6px;background:#10b981;border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+.hero h1{font-size:clamp(40px,6.5vw,80px);font-weight:700;letter-spacing:-0.04em;line-height:1;margin-bottom:24px;color:#fff}
+.hero h1 span.gradient{background:linear-gradient(135deg,#10b981 0%,#6ee7b7 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero h1 span.muted{color:#4b5563;display:block}
+.hero p{font-size:clamp(17px,2.2vw,20px);color:#9ca3af;max-width:640px;margin:0 auto 44px;line-height:1.55}
 .hero-buttons{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-.btn-primary{background:#10b981;color:#fff;padding:14px 28px;border-radius:10px;font-weight:600;font-size:15px;transition:all 0.2s;display:inline-flex;align-items:center;gap:8px}
-.btn-primary:hover{background:#059669;text-decoration:none;transform:translateY(-1px)}
-.btn-secondary{background:transparent;color:#e5e7eb;padding:14px 28px;border-radius:10px;font-weight:500;font-size:15px;border:1px solid rgba(255,255,255,0.15);transition:all 0.2s}
-.btn-secondary:hover{border-color:rgba(255,255,255,0.3);text-decoration:none;background:rgba(255,255,255,0.03)}
+.btn-primary{background:#10b981;color:#fff;padding:15px 32px;border-radius:10px;font-weight:600;font-size:15px;transition:all 0.2s;display:inline-flex;align-items:center;gap:10px;border:none;cursor:pointer}
+.btn-primary:hover{background:#059669;color:#fff;transform:translateY(-1px);box-shadow:0 10px 30px rgba(16,185,129,0.25)}
+.btn-secondary{background:rgba(255,255,255,0.03);color:#e4e7e9;padding:15px 32px;border-radius:10px;font-weight:500;font-size:15px;border:1px solid rgba(255,255,255,0.12);transition:all 0.2s}
+.btn-secondary:hover{border-color:rgba(255,255,255,0.3);background:rgba(255,255,255,0.06);color:#fff}
 
-/* Proof strip */
-.proof-strip{padding:30px 0;border-top:1px solid rgba(255,255,255,0.04);border-bottom:1px solid rgba(255,255,255,0.04);margin-top:40px}
-.proof-text{text-align:center;font-size:13px;color:#6b7280;text-transform:uppercase;letter-spacing:0.1em;font-weight:500}
+/* Tech stack marquee */
+.stack{padding:40px 0;border-top:1px solid rgba(255,255,255,0.05);border-bottom:1px solid rgba(255,255,255,0.05)}
+.stack-label{text-align:center;font-size:12px;color:#6b7280;text-transform:uppercase;letter-spacing:0.15em;margin-bottom:28px;font-weight:500}
+.marquee{overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.marquee-track{display:flex;gap:48px;animation:scroll 55s linear infinite;width:max-content}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.stack-item{font-size:17px;font-weight:500;color:#6b7280;white-space:nowrap;display:flex;align-items:center;gap:8px}
+.stack-item .dot{width:6px;height:6px;background:#374151;border-radius:50%}
 
-/* Section */
-.section{padding:80px 0}
-.section-label{display:block;text-align:center;font-size:12px;font-weight:600;color:#10b981;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:16px}
-.section h2{font-size:clamp(28px,4vw,40px);font-weight:700;letter-spacing:-0.02em;text-align:center;margin-bottom:16px;color:#fff;line-height:1.2}
-.section-sub{text-align:center;font-size:17px;color:#9ca3af;max-width:620px;margin:0 auto 56px;line-height:1.6}
+/* Sections */
+.section{padding:120px 0;position:relative}
+.section-narrow{max-width:880px;margin:0 auto}
+.section-label{display:block;text-align:center;font-size:12px;font-weight:600;color:#10b981;text-transform:uppercase;letter-spacing:0.14em;margin-bottom:20px}
+.section h2{font-size:clamp(32px,5vw,52px);font-weight:700;letter-spacing:-0.03em;text-align:center;margin-bottom:20px;color:#fff;line-height:1.1}
+.section-sub{text-align:center;font-size:18px;color:#9ca3af;max-width:680px;margin:0 auto 72px;line-height:1.6}
 
-/* Problem/solution grid */
-.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-@media(max-width:820px){.grid-3{grid-template-columns:1fr}}
-.card{background:#111816;border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:28px}
-.card-icon{width:42px;height:42px;background:rgba(16,185,129,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;color:#10b981;font-size:20px;font-weight:700}
-.card h3{font-size:17px;font-weight:600;color:#fff;margin-bottom:8px;letter-spacing:-0.01em}
-.card p{font-size:14px;color:#9ca3af;line-height:1.6}
+/* Services grid — Authect style */
+.services{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+@media(max-width:820px){.services{grid-template-columns:1fr}}
+.service{background:linear-gradient(180deg,rgba(255,255,255,0.02) 0%,rgba(255,255,255,0) 100%);border:1px solid rgba(255,255,255,0.06);border-radius:20px;padding:40px;position:relative;overflow:hidden;transition:all 0.3s}
+.service:hover{border-color:rgba(16,185,129,0.3);transform:translateY(-2px)}
+.service::before{content:"";position:absolute;top:0;right:0;width:200px;height:200px;background:radial-gradient(circle,rgba(16,185,129,0.05) 0%,transparent 70%);pointer-events:none}
+.service-icon{width:52px;height:52px;background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.2);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:24px;color:#10b981;position:relative;z-index:1}
+.service-icon svg{width:24px;height:24px}
+.service h3{font-size:22px;font-weight:600;color:#fff;margin-bottom:12px;letter-spacing:-0.01em;position:relative;z-index:1}
+.service p{font-size:15px;color:#9ca3af;line-height:1.65;position:relative;z-index:1}
+
+/* Platform / Numbered features — Authect "Intelligence at the Core" */
+.platform{background:linear-gradient(180deg,#050607 0%,#080a0b 50%,#050607 100%)}
+.platform-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;max-width:1000px;margin:0 auto}
+@media(max-width:820px){.platform-grid{grid-template-columns:1fr}}
+.feature{padding:32px;border:1px solid rgba(255,255,255,0.06);border-radius:16px;background:rgba(255,255,255,0.015);transition:all 0.3s}
+.feature:hover{border-color:rgba(16,185,129,0.2);background:rgba(16,185,129,0.02)}
+.feature-num{font-size:11px;font-weight:700;color:#10b981;letter-spacing:0.15em;margin-bottom:12px;display:block}
+.feature h3{font-size:20px;font-weight:600;color:#fff;margin-bottom:10px;letter-spacing:-0.01em}
+.feature p{font-size:14.5px;color:#9ca3af;line-height:1.65}
 
 /* Comparison */
-.compare{background:#0d1310;padding:80px 0}
-.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:880px;margin:0 auto}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:920px;margin:0 auto}
 @media(max-width:640px){.compare-grid{grid-template-columns:1fr}}
-.compare-card{background:#111816;border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:28px}
-.compare-card.highlight{border-color:rgba(16,185,129,0.4);background:rgba(16,185,129,0.03)}
-.compare-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:#6b7280;margin-bottom:14px}
+.compare-card{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:16px;padding:32px;transition:all 0.3s}
+.compare-card.highlight{border-color:rgba(16,185,129,0.4);background:linear-gradient(180deg,rgba(16,185,129,0.04) 0%,rgba(16,185,129,0.01) 100%);position:relative}
+.compare-card.highlight::after{content:"PARIOX";position:absolute;top:-10px;right:20px;background:#10b981;color:#000;font-size:10px;font-weight:700;letter-spacing:0.15em;padding:4px 12px;border-radius:999px}
+.compare-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:#6b7280;margin-bottom:16px}
 .compare-card.highlight .compare-label{color:#10b981}
-.compare-title{font-size:18px;font-weight:600;color:#fff;margin-bottom:18px;letter-spacing:-0.01em}
+.compare-title{font-size:20px;font-weight:600;color:#fff;margin-bottom:24px;letter-spacing:-0.01em;line-height:1.3}
 .compare-list{list-style:none}
-.compare-list li{padding:8px 0;font-size:14px;color:#9ca3af;display:flex;align-items:flex-start;gap:10px;border-top:1px solid rgba(255,255,255,0.04)}
+.compare-list li{padding:12px 0;font-size:14.5px;color:#9ca3af;display:flex;align-items:flex-start;gap:12px;border-top:1px solid rgba(255,255,255,0.04)}
 .compare-list li:first-child{border-top:none}
-.compare-list li::before{content:"✗";color:#ef4444;font-weight:700;flex-shrink:0;margin-top:1px}
-.compare-card.highlight .compare-list li::before{content:"✓";color:#10b981}
+.compare-list li::before{content:"×";color:#ef4444;font-weight:700;flex-shrink:0;font-size:18px;line-height:1.2}
+.compare-card.highlight .compare-list li::before{content:"✓";color:#10b981;font-size:15px;line-height:1.3}
 
 /* Process */
-.process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;position:relative}
-@media(max-width:820px){.process-grid{grid-template-columns:1fr}}
-.step{background:#111816;border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:28px;position:relative}
-.step-num{position:absolute;top:-14px;left:28px;background:#10b981;color:#fff;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700}
-.step h3{font-size:17px;font-weight:600;color:#fff;margin:8px 0 10px;letter-spacing:-0.01em}
-.step p{font-size:14px;color:#9ca3af;line-height:1.6}
+.process{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1040px;margin:0 auto}
+@media(max-width:820px){.process{grid-template-columns:1fr}}
+.step{padding:36px;border:1px solid rgba(255,255,255,0.06);border-radius:16px;background:rgba(255,255,255,0.015);position:relative;transition:all 0.3s}
+.step:hover{border-color:rgba(16,185,129,0.25)}
+.step-badge{display:inline-block;background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.3);color:#10b981;font-size:11px;font-weight:600;letter-spacing:0.1em;padding:4px 12px;border-radius:999px;margin-bottom:18px}
+.step h3{font-size:20px;font-weight:600;color:#fff;margin-bottom:10px;letter-spacing:-0.01em}
+.step p{font-size:14.5px;color:#9ca3af;line-height:1.65}
 
-/* Pricing */
-.pricing{background:#0d1310;padding:80px 0}
-.pricing-card{max-width:520px;margin:0 auto;background:#111816;border:1px solid rgba(16,185,129,0.3);border-radius:16px;padding:40px;text-align:center}
-.pricing-tier{font-size:12px;font-weight:600;color:#10b981;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:12px}
-.pricing-amount{font-size:48px;font-weight:700;color:#fff;letter-spacing:-0.03em;margin-bottom:4px}
-.pricing-amount span{font-size:18px;color:#9ca3af;font-weight:500}
-.pricing-sub{font-size:14px;color:#9ca3af;margin-bottom:28px}
-.pricing-features{text-align:left;margin-bottom:28px;border-top:1px solid rgba(255,255,255,0.06);padding-top:24px}
-.pricing-features li{list-style:none;padding:10px 0;font-size:14px;color:#d1d5db;display:flex;align-items:flex-start;gap:10px}
-.pricing-features li::before{content:"✓";color:#10b981;font-weight:700}
-
-/* Who it's for */
-.verticals{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:880px;margin:0 auto}
+/* Verticals */
+.verticals{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:1040px;margin:0 auto}
 @media(max-width:820px){.verticals{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:480px){.verticals{grid-template-columns:1fr}}
-.vertical{background:#111816;border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:20px;text-align:center;transition:border-color 0.2s}
-.vertical:hover{border-color:rgba(16,185,129,0.3)}
-.vertical-icon{font-size:28px;margin-bottom:10px}
-.vertical-name{font-size:14px;font-weight:600;color:#fff;margin-bottom:4px}
-.vertical-use{font-size:12px;color:#9ca3af;line-height:1.5}
+.vertical{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:28px 20px;text-align:center;transition:all 0.3s}
+.vertical:hover{border-color:rgba(16,185,129,0.25);transform:translateY(-2px)}
+.vertical-icon{margin-bottom:14px;color:#10b981;display:flex;justify-content:center}
+.vertical-icon svg{width:32px;height:32px}
+.vertical-name{font-size:15px;font-weight:600;color:#fff;margin-bottom:6px}
+.vertical-use{font-size:13px;color:#9ca3af;line-height:1.5}
 
-/* CTA section */
-.cta{padding:100px 0;text-align:center}
-.cta h2{margin-bottom:20px}
-.cta p{font-size:17px;color:#9ca3af;max-width:540px;margin:0 auto 32px;line-height:1.6}
+/* Pricing */
+.pricing{padding:120px 0;background:radial-gradient(ellipse at center,rgba(16,185,129,0.04) 0%,transparent 70%)}
+.pricing-card{background:linear-gradient(180deg,rgba(16,185,129,0.05) 0%,rgba(255,255,255,0.02) 100%);border:1px solid rgba(16,185,129,0.3);border-radius:20px;padding:44px 36px;text-align:center;position:relative;overflow:hidden;display:flex;flex-direction:column}
+.pricing-inner{display:flex;flex-direction:column;height:100%}
+.pricing-features{flex:1}
+.pricing-card::before{content:"";position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(16,185,129,0.08) 0%,transparent 50%);pointer-events:none}
+.pricing-inner{position:relative;z-index:1}
+.pricing-tier{font-size:12px;font-weight:600;color:#10b981;text-transform:uppercase;letter-spacing:0.15em;margin-bottom:20px}
+.pricing-amount{font-size:64px;font-weight:700;color:#fff;letter-spacing:-0.04em;margin-bottom:8px;line-height:1}
+.pricing-amount span{font-size:20px;color:#9ca3af;font-weight:500;margin-left:8px}
+.pricing-sub{font-size:14px;color:#9ca3af;margin-bottom:32px}
+.pricing-features{text-align:left;margin-bottom:36px;border-top:1px solid rgba(255,255,255,0.08);padding-top:28px}
+.pricing-features li{list-style:none;padding:12px 0;font-size:14.5px;color:#d1d5db;display:flex;align-items:flex-start;gap:12px}
+.pricing-features li::before{content:"✓";color:#10b981;font-weight:700;flex-shrink:0}
+.pricing-card .btn-primary{width:100%;justify-content:center}
+
+/* Dual CTA — Authect style */
+.final-cta{padding:140px 0 100px;text-align:center;position:relative;overflow:hidden}
+.final-cta::before{content:"";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:1200px;height:600px;background:radial-gradient(ellipse,rgba(16,185,129,0.08) 0%,transparent 60%);pointer-events:none}
+.final-cta-inner{position:relative;z-index:1}
+.final-cta h2{font-size:clamp(44px,7vw,88px);font-weight:700;letter-spacing:-0.04em;line-height:1;margin-bottom:8px;color:#fff}
+.final-cta h2.accent{background:linear-gradient(135deg,#10b981 0%,#6ee7b7 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:44px}
+.final-cta-buttons{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:40px}
 
 /* Footer */
-.footer{border-top:1px solid rgba(255,255,255,0.06);padding:32px 0;margin-top:40px}
-.footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
-.footer-left{font-size:14px;color:#6b7280}
-.footer-right{display:flex;gap:24px}
-.footer-right a{font-size:14px;color:#9ca3af}
-.footer-right a:hover{color:#fff;text-decoration:none}
+.footer{border-top:1px solid rgba(255,255,255,0.06);padding:48px 0 32px;background:#030405}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;margin-bottom:40px}
+@media(max-width:720px){.footer-grid{grid-template-columns:1fr}}
+.footer-brand{max-width:320px}
+.footer-brand .logo{margin-bottom:16px}
+.footer-brand p{font-size:14px;color:#6b7280;line-height:1.6}
+.footer-col h4{font-size:12px;font-weight:600;color:#9ca3af;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:18px}
+.footer-col ul{list-style:none}
+.footer-col li{padding:6px 0}
+.footer-col a{font-size:14px;color:#6b7280;transition:color 0.2s}
+.footer-col a:hover{color:#fff}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.04);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:13px;color:#4b5563}
+.footer-bottom-links{display:flex;gap:20px}
+.footer-bottom-links a{color:#6b7280;font-size:13px}
+
+/* Hero terminal visual */
+.hero-terminal{max-width:720px;margin:60px auto 0;background:linear-gradient(180deg,rgba(255,255,255,0.03) 0%,rgba(255,255,255,0.01) 100%);border:1px solid rgba(255,255,255,0.08);border-radius:16px;overflow:hidden;text-align:left;box-shadow:0 24px 70px rgba(0,0,0,0.5),0 0 100px rgba(16,185,129,0.06)}
+.term-bar{display:flex;align-items:center;gap:16px;padding:12px 18px;border-bottom:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.02)}
+.term-dots{display:flex;gap:6px}
+.term-dots span{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.14)}
+.term-title{font-family:"SF Mono","Monaco","Consolas",monospace;font-size:12px;color:#9ca3af;flex:1;text-align:center;letter-spacing:0.02em}
+.term-meta{font-size:10.5px;color:#10b981;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;display:inline-flex;align-items:center;gap:6px}
+.term-meta::before{content:"";width:6px;height:6px;border-radius:50%;background:#10b981;box-shadow:0 0 8px #10b981}
+.term-body{padding:26px 28px;font-family:"SF Mono","Monaco","Consolas",monospace;font-size:13.5px;line-height:1.75}
+.term-line{color:#e4e7e9;margin-bottom:14px}
+.term-prompt{color:#10b981;font-weight:700;margin-right:10px}
+.term-response{color:#d1d5db;margin-bottom:22px}
+.term-accent{color:#6ee7b7;font-weight:600}
+.term-cursor{color:#10b981;animation:blink 1s steps(2) infinite;margin-left:2px;display:inline-block}
+@keyframes blink{0%,50%{opacity:1}51%,100%{opacity:0}}
+.term-footer{display:flex;gap:20px;flex-wrap:wrap;padding-top:18px;border-top:1px solid rgba(255,255,255,0.06);font-size:11.5px;color:#6b7280;letter-spacing:0.02em}
+.term-tag{display:inline-flex;align-items:center;gap:6px}
+.term-tag::before{content:"";width:5px;height:5px;border-radius:50%;background:#10b981;opacity:0.7}
+@media(max-width:640px){.term-body{padding:20px 18px;font-size:12.5px}.term-footer{gap:12px}}
+
+/* Scroll reveal */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity 0.8s cubic-bezier(0.22,1,0.36,1),transform 0.8s cubic-bezier(0.22,1,0.36,1)}
+.reveal.is-visible{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+/* Pricing grid */
+.pricing-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:1000px;margin:0 auto;align-items:stretch}
+@media(max-width:820px){.pricing-grid{grid-template-columns:1fr;max-width:540px}}
+.pricing-card.pricing-alt{border:1px solid rgba(255,255,255,0.08);background:linear-gradient(180deg,rgba(255,255,255,0.025) 0%,rgba(255,255,255,0) 100%)}
+.pricing-alt::before{display:none}
+.pricing-alt .pricing-tier{color:#9ca3af}
+.pricing-alt .pricing-amount{color:#e4e7e9}
+.pricing-alt .btn-primary{background:rgba(255,255,255,0.06);color:#fff;border:1px solid rgba(255,255,255,0.14)}
+.pricing-alt .btn-primary:hover{background:rgba(255,255,255,0.12);box-shadow:none;transform:translateY(-1px)}
 </style>
 </head>
 <body>
 
 <nav class="nav">
   <div class="container nav-inner">
-    <a href="#" class="logo">🔒 Pariox<span>.</span></a>
+    <a href="#" class="logo"><span class="logo-dot"></span>Pariox</a>
     <div class="nav-links">
+      <a href="#services">Services</a>
       <a href="#how">How it works</a>
       <a href="#pricing">Pricing</a>
-      <a href="https://huggingface.co/spaces/VicHue/pariox-helpdesk-demo" class="nav-cta" target="_blank" rel="noopener">Try live demo →</a>
+      <a href="https://huggingface.co/spaces/VicHue/pariox-helpdesk-demo" class="nav-cta" target="_blank" rel="noopener">Try live demo</a>
     </div>
   </div>
 </nav>
 
 <section class="hero">
-  <div class="container">
-    <span class="hero-tag">🔒 Private · Fine-tuned · Owned by you</span>
-    <h1>AI that knows your business.<br><span>Runs on your hardware.</span></h1>
-    <p>Custom fine-tuned language models for MSPs, law firms, and businesses that need AI without the data exposure. Trained on your procedures. Deployed on your infrastructure. Yours to keep.</p>
+  <div class="container hero-inner">
+    <span class="hero-tag">Private · Fine-Tuned · Deployed On Your Hardware</span>
+    <h1>Own Your Intelligence.<br><span class="gradient">Not Someone Else's Cloud.</span></h1>
+    <p>Custom fine-tuned AI models for MSPs, law firms, and businesses that refuse to send their data to OpenAI every time a staff member types a question. Trained on your procedures. Deployed behind your firewall. Yours forever.</p>
     <div class="hero-buttons">
       <a href="https://huggingface.co/spaces/VicHue/pariox-helpdesk-demo" class="btn-primary" target="_blank" rel="noopener">Try the live demo →</a>
-      <a href="#how" class="btn-secondary">How it works</a>
+      <a href="#services" class="btn-secondary">See what we build</a>
+    </div>
+
+    <div class="hero-terminal">
+      <div class="term-bar">
+        <div class="term-dots"><span></span><span></span><span></span></div>
+        <div class="term-title">pariox-msp-v3 · local inference</div>
+        <div class="term-meta">offline</div>
+      </div>
+      <div class="term-body">
+        <div class="term-line"><span class="term-prompt">›</span>What's the standard Tier 2 backup SLA for enterprise clients?</div>
+        <div class="term-response">Tier 2 backup per MSA §3.2: <span class="term-accent">4-hour RPO, 8-hour RTO</span>. Hourly incrementals retained 30 days, AES-256 encrypted at rest, replicated to secondary datacenter nightly.<span class="term-cursor">▍</span></div>
+        <div class="term-footer">
+          <span class="term-tag">model.safetensors</span>
+          <span class="term-tag">0 API calls</span>
+          <span class="term-tag">air-gapped</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<div class="proof-strip">
-  <div class="container">
-    <p class="proof-text">Built for businesses that can't afford to leak their data</p>
+<section class="stack">
+  <p class="stack-label">Built with best-in-class open-source AI infrastructure</p>
+  <div class="marquee">
+    <div class="marquee-track">
+      <div class="stack-item">PyTorch<span class="dot"></span></div>
+      <div class="stack-item">Hugging Face<span class="dot"></span></div>
+      <div class="stack-item">TinyLlama<span class="dot"></span></div>
+      <div class="stack-item">Mistral<span class="dot"></span></div>
+      <div class="stack-item">Llama 3<span class="dot"></span></div>
+      <div class="stack-item">LoRA<span class="dot"></span></div>
+      <div class="stack-item">QLoRA<span class="dot"></span></div>
+      <div class="stack-item">PEFT<span class="dot"></span></div>
+      <div class="stack-item">Transformers<span class="dot"></span></div>
+      <div class="stack-item">Python<span class="dot"></span></div>
+      <div class="stack-item">CUDA<span class="dot"></span></div>
+      <div class="stack-item">Gradio<span class="dot"></span></div>
+      <!-- duplicate for infinite scroll -->
+      <div class="stack-item">PyTorch<span class="dot"></span></div>
+      <div class="stack-item">Hugging Face<span class="dot"></span></div>
+      <div class="stack-item">TinyLlama<span class="dot"></span></div>
+      <div class="stack-item">Mistral<span class="dot"></span></div>
+      <div class="stack-item">Llama 3<span class="dot"></span></div>
+      <div class="stack-item">LoRA<span class="dot"></span></div>
+      <div class="stack-item">QLoRA<span class="dot"></span></div>
+      <div class="stack-item">PEFT<span class="dot"></span></div>
+      <div class="stack-item">Transformers<span class="dot"></span></div>
+      <div class="stack-item">Python<span class="dot"></span></div>
+      <div class="stack-item">CUDA<span class="dot"></span></div>
+      <div class="stack-item">Gradio<span class="dot"></span></div>
+    </div>
   </div>
-</div>
+</section>
+
+<section class="section" id="services">
+  <div class="container">
+    <span class="section-label">What we build</span>
+    <h2>AI infrastructure designed<br>for regulated industries</h2>
+    <p class="section-sub">Enterprise-grade fine-tuning, accessible to small and mid-sized businesses. The same methodology Fortune 500 companies pay $50K+ for, delivered at a fraction of the cost.</p>
+
+    <div class="services">
+      <div class="service">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4"/><path d="M9 13a4.5 4.5 0 0 0 3-4"/></svg></div>
+        <h3>Custom LLM Fine-Tuning</h3>
+        <p>Language models trained on your ticket history, documentation, and standard procedures. The model learns your world during training — not generic internet data.</p>
+      </div>
+      <div class="service">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><circle cx="12" cy="11.5" r="1.5"/><path d="M12 13v2.5"/></svg></div>
+        <h3>On-Premise Deployment</h3>
+        <p>Models deployed directly on your hardware or private server. Zero cloud dependencies, zero data exposure, full offline capability. Works when the internet doesn't.</p>
+      </div>
+      <div class="service">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 0-15.5-6.3L3 8"/><path d="M3 3v5h5"/><path d="M3 12a9 9 0 0 0 15.5 6.3L21 16"/><path d="M21 21v-5h-5"/></svg></div>
+        <h3>Continuous Retraining</h3>
+        <p>Optional monthly retainer keeps the model current as your data grows. New tickets, new procedures, new clients — the model stays aligned to your business.</p>
+      </div>
+      <div class="service">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="4" x="8" y="2" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg></div>
+        <h3>Compliance-Ready</h3>
+        <p>Built from the ground up for businesses with HIPAA, SOC 2, or attorney-client privilege obligations. Data handling spelled out in contract. Deletion confirmed in writing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section platform">
+  <div class="container">
+    <span class="section-label">Why fine-tuning</span>
+    <h2>Intelligence at the core<br>of your infrastructure</h2>
+    <p class="section-sub">Our approach isn't just private. It's smarter than what's sold to you as "AI for business" today.</p>
+
+    <div class="platform-grid">
+      <div class="feature">
+        <span class="feature-num">01</span>
+        <h3>Learned, Not Looked Up</h3>
+        <p>Fine-tuning embeds your procedures into the model's weights during training. It doesn't "search" your documents at runtime — it already knows the answer.</p>
+      </div>
+      <div class="feature">
+        <span class="feature-num">02</span>
+        <h3>Dramatically Fewer Hallucinations</h3>
+        <p>Domain-specific training keeps responses within your scope of work. The model stays in its lane because it was built for your lane.</p>
+      </div>
+      <div class="feature">
+        <span class="feature-num">03</span>
+        <h3>Runs Anywhere</h3>
+        <p>Consumer GPU, enterprise server, air-gapped network. The same model runs on $300 hardware or $30,000 hardware — your choice, your budget.</p>
+      </div>
+      <div class="feature">
+        <span class="feature-num">04</span>
+        <h3>Zero Vendor Dependency</h3>
+        <p>If OpenAI changes their pricing, their terms, or goes out of business tomorrow, your tool still works. You own the weights. They can't be revoked.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="section">
   <div class="container">
-    <span class="section-label">What you get</span>
-    <h2>Not another ChatGPT wrapper.</h2>
-    <p class="section-sub">Most "AI for business" tools upload your documents to OpenAI's servers and search them at runtime. That's a compliance problem, not a solution. Here's what's different.</p>
-
-    <div class="grid-3">
-      <div class="card">
-        <div class="card-icon">🔒</div>
-        <h3>Private by default</h3>
-        <p>Your data never leaves your network. Not during training. Not during use. The model runs on your hardware, behind your firewall, under your control.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">🎯</div>
-        <h3>Trained on your world</h3>
-        <p>The model learns your procedures, your clients, your escalation paths during training — not generic internet data. It answers like one of your team, not like Google.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">💎</div>
-        <h3>You own the asset</h3>
-        <p>Not a subscription you rent. It's your model, permanently, on your infrastructure. Cancel anytime and keep everything. No vendor lock-in, no per-user fees.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="compare">
-  <div class="container">
     <span class="section-label">The difference</span>
-    <h2>Wrapper vs. fine-tuned model</h2>
-    <p class="section-sub">They look the same in a demo. They are not the same product.</p>
+    <h2>Wrapper. Or asset.</h2>
+    <p class="section-sub">They look the same in a demo. They are not the same product. Here's the structural difference between renting intelligence and owning it.</p>
 
     <div class="compare-grid">
       <div class="compare-card">
         <div class="compare-label">ChatGPT wrapper / Copilot</div>
-        <div class="compare-title">Your data visits OpenAI every query</div>
+        <div class="compare-title">Your data visits a third party. Every query. Forever.</div>
         <ul class="compare-list">
-          <li>Data uploaded to third-party servers</li>
-          <li>Generic answers from internet knowledge</li>
-          <li>Monthly per-user subscriptions forever</li>
+          <li>Data uploaded to OpenAI / Microsoft servers</li>
+          <li>Generic answers from public internet knowledge</li>
+          <li>Monthly per-user subscriptions indefinitely</li>
           <li>Vendor changes = your tool changes</li>
-          <li>Requires internet connection</li>
-          <li>Doesn't know your clients or systems</li>
+          <li>Requires internet connection to function</li>
+          <li>Doesn't know your clients, systems, or shorthand</li>
         </ul>
       </div>
       <div class="compare-card highlight">
         <div class="compare-label">Pariox fine-tuned model</div>
-        <div class="compare-title">Your data stays on your hardware</div>
+        <div class="compare-title">Your data stays on your hardware. Period.</div>
         <ul class="compare-list">
-          <li>Zero data leaves your network</li>
-          <li>Trained on your actual workflows</li>
-          <li>One-time build fee, you own it</li>
-          <li>No vendor dependency</li>
-          <li>Works completely offline</li>
-          <li>Knows your clients, systems, shorthand</li>
+          <li>Zero data ever leaves your network</li>
+          <li>Trained on your actual workflows and history</li>
+          <li>One-time build fee, yours permanently</li>
+          <li>No vendor lock-in, no forced upgrades</li>
+          <li>Works completely offline, air-gapped</li>
+          <li>Knows your clients, systems, and internal shorthand</li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section" id="how">
+<section class="section platform" id="how">
   <div class="container">
-    <span class="section-label">How it works</span>
-    <h2>From your data to working AI in 2–3 weeks</h2>
-    <p class="section-sub">A simple, transparent process. Same methodology used by enterprise consulting firms that charge 10–50× more.</p>
+    <span class="section-label">The process</span>
+    <h2>From your data to working AI<br>in 2 to 3 weeks</h2>
+    <p class="section-sub">Transparent. Well-documented. No black boxes.</p>
 
-    <div class="process-grid">
+    <div class="process">
       <div class="step">
-        <div class="step-num">1</div>
-        <h3>You send your data</h3>
-        <p>Ticket history, documentation, standard procedures — exported from your ticketing system. Transferred via encrypted channel. Never touches a third-party server.</p>
+        <span class="step-badge">STEP 01</span>
+        <h3>Secure Data Transfer</h3>
+        <p>You export ticket history, documentation, and procedures from your systems. Transferred via encrypted channel. Never touches a third-party AI service — ever.</p>
       </div>
       <div class="step">
-        <div class="step-num">2</div>
-        <h3>I fine-tune the model</h3>
-        <p>Using LoRA/QLoRA methodology on a local GPU. The model learns your specific workflows, terminology, and escalation logic. Training stays on my machine — nothing uploaded.</p>
+        <span class="step-badge">STEP 02</span>
+        <h3>Local Fine-Tuning</h3>
+        <p>Training runs on my local GPU using LoRA/QLoRA methodology. Your data never leaves my machine. Progress reports shared throughout the process.</p>
       </div>
       <div class="step">
-        <div class="step-num">3</div>
-        <h3>You deploy on your hardware</h3>
-        <p>Full delivery of model weights, inference scripts, and deployment documentation. Runs on your server or workstation. All my copies of your data deleted in writing.</p>
+        <span class="step-badge">STEP 03</span>
+        <h3>Private Deployment</h3>
+        <p>Full delivery: model weights, inference scripts, documentation. Deployed on your infrastructure. My copies of your data deleted in writing within 7 days.</p>
       </div>
     </div>
   </div>
@@ -238,29 +396,29 @@ a:hover{text-decoration:underline}
 <section class="section">
   <div class="container">
     <span class="section-label">Built for</span>
-    <h2>Businesses with knowledge worth protecting</h2>
-    <p class="section-sub">If you have internal procedures your staff reference every day, and clients whose data can't leave your network, you're the target.</p>
+    <h2>Businesses with knowledge<br>worth protecting</h2>
+    <p class="section-sub">If you have internal procedures your team references daily — and client data that can't leave your network — you're exactly who this was built for.</p>
 
     <div class="verticals">
       <div class="vertical">
-        <div class="vertical-icon">🖥️</div>
+        <div class="vertical-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg></div>
         <div class="vertical-name">MSPs</div>
-        <div class="vertical-use">Tier 1 ticket deflection, knowledge retention</div>
+        <div class="vertical-use">Tier 1 deflection. Knowledge retention.</div>
       </div>
       <div class="vertical">
-        <div class="vertical-icon">⚖️</div>
+        <div class="vertical-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg></div>
         <div class="vertical-name">Law firms</div>
-        <div class="vertical-use">Case file Q&A, clause references</div>
+        <div class="vertical-use">Case file Q&A. Clause references.</div>
       </div>
       <div class="vertical">
-        <div class="vertical-icon">📊</div>
+        <div class="vertical-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="20" y2="10"/><line x1="18" x2="18" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="16"/><line x1="3" x2="21" y1="20" y2="20"/></svg></div>
         <div class="vertical-name">Accounting</div>
-        <div class="vertical-use">Client intake, tax code lookup</div>
+        <div class="vertical-use">Client intake. Tax code lookup.</div>
       </div>
       <div class="vertical">
-        <div class="vertical-icon">🏢</div>
+        <div class="vertical-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg></div>
         <div class="vertical-name">Property mgmt</div>
-        <div class="vertical-use">Lease clauses, maintenance triage</div>
+        <div class="vertical-use">Lease clauses. Maintenance triage.</div>
       </div>
     </div>
   </div>
@@ -269,48 +427,114 @@ a:hover{text-decoration:underline}
 <section class="pricing" id="pricing">
   <div class="container">
     <span class="section-label">Pricing</span>
-    <h2>Transparent. Flat-rate. You own it.</h2>
-    <p class="section-sub">No seat-based pricing. No per-query fees. No vendor lock-in.</p>
+    <h2>Flat-rate. Transparent.<br>You own the outcome.</h2>
+    <p class="section-sub">No per-seat fees. No per-query charges. No vendor lock-in. One price, one deliverable, yours forever.</p>
 
-    <div class="pricing-card">
-      <div class="pricing-tier">Custom Fine-Tuned Model</div>
-      <div class="pricing-amount">$1,500 <span>build</span></div>
-      <div class="pricing-sub">+ $300/month optional retainer for retraining & support</div>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pricing-inner">
+          <div class="pricing-tier">Custom Fine-Tuned Model</div>
+          <div class="pricing-amount">$1,500<span>build fee</span></div>
+          <div class="pricing-sub">One-time project · 2–3 week delivery</div>
 
-      <ul class="pricing-features">
-        <li>Custom model trained on your data</li>
-        <li>LoRA/QLoRA fine-tuning on 500–2,000 examples</li>
-        <li>Deployment on your hardware</li>
-        <li>Full delivery: weights, scripts, documentation</li>
-        <li>2–3 week timeline from kickoff</li>
-        <li>50% deposit, 50% on delivery</li>
-        <li>No long-term contracts — you own everything</li>
-      </ul>
+          <ul class="pricing-features">
+            <li>Custom model trained on your proprietary data</li>
+            <li>LoRA/QLoRA fine-tuning on 500–2,000 examples</li>
+            <li>Deployed on your own hardware or server</li>
+            <li>Full delivery: weights, scripts, deployment docs</li>
+            <li>50% deposit, 50% on delivery and acceptance</li>
+            <li>No long-term contracts — you own everything</li>
+          </ul>
 
-      <a href="mailto:victor@pariox.co?subject=Interested in Pariox" class="btn-primary" style="width:100%;justify-content:center">Start a conversation →</a>
+          <a href="mailto:victor@pariox.co?subject=Starting a Pariox project" class="btn-primary">Start a conversation →</a>
+        </div>
+      </div>
+
+      <div class="pricing-card pricing-alt">
+        <div class="pricing-inner">
+          <div class="pricing-tier">Managed Retainer</div>
+          <div class="pricing-amount">$300<span>/month</span></div>
+          <div class="pricing-sub">Optional · starts after delivery</div>
+
+          <ul class="pricing-features">
+            <li>Monthly retraining on fresh tickets & procedures</li>
+            <li>Priority fixes, tweaks, and prompt refinement</li>
+            <li>Inference and deployment issue support</li>
+            <li>New procedure integration as workflows evolve</li>
+            <li>Version-controlled model updates delivered to you</li>
+            <li>Cancel anytime — no contract, no lock-in</li>
+          </ul>
+
+          <a href="mailto:victor@pariox.co?subject=Adding a Pariox retainer" class="btn-primary">Add to a project →</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="cta">
-  <div class="container">
-    <span class="section-label">See it in action</span>
-    <h2>The best proof is a live demo.</h2>
-    <p>Try a working fine-tuned helpdesk model right now. Ask it any IT support question and see what "trained on domain data" actually looks like.</p>
-    <a href="https://huggingface.co/spaces/VicHue/pariox-helpdesk-demo" class="btn-primary" target="_blank" rel="noopener">Launch live demo →</a>
+<section class="final-cta">
+  <div class="container final-cta-inner">
+    <span class="section-label" style="margin-bottom:32px">Own It Locally.</span>
+    <h2>Train It Privately.</h2>
+    <h2 class="accent">Keep It Forever.</h2>
+    <div class="final-cta-buttons">
+      <a href="mailto:victor@pariox.co?subject=Starting a Pariox project" class="btn-primary">Start a project →</a>
+      <a href="https://huggingface.co/spaces/VicHue/pariox-helpdesk-demo" class="btn-secondary" target="_blank" rel="noopener">Try live demo</a>
+    </div>
   </div>
 </section>
 
 <footer class="footer">
-  <div class="container footer-inner">
-    <div class="footer-left">© 2026 Pariox · Built by Victor Huerta · Bellingham, WA</div>
-    <div class="footer-right">
-      <a href="mailto:victor@pariox.co">victor@pariox.co</a>
-      <a href="https://github.com/VicHue" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://huggingface.co/VicHue" target="_blank" rel="noopener">Hugging Face</a>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo"><span class="logo-dot"></span>Pariox</a>
+        <p>Private, fine-tuned AI models for businesses that demand data sovereignty. Built in Bellingham, WA. Deployed anywhere you own the hardware.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">LLM Fine-Tuning</a></li>
+          <li><a href="#services">On-Premise Deployment</a></li>
+          <li><a href="#services">Model Retraining</a></li>
+          <li><a href="#services">Compliance</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="mailto:victor@pariox.co">victor@pariox.co</a></li>
+          <li><a href="https://huggingface.co/spaces/VicHue/pariox-helpdesk-demo" target="_blank" rel="noopener">Live Demo</a></li>
+          <li><a href="https://github.com/VicHue" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://huggingface.co/VicHue" target="_blank" rel="noopener">Hugging Face</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Pariox · Victor Huerta · Bellingham, WA</div>
+      <div class="footer-bottom-links">
+        <a href="mailto:victor@pariox.co">Contact</a>
+      </div>
     </div>
   </div>
 </footer>
+
+<script>
+(function(){
+  var targets = document.querySelectorAll('.service, .feature, .step, .vertical, .compare-card, .pricing-card, .hero-terminal');
+  if (!('IntersectionObserver' in window)) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting){ e.target.classList.add('is-visible'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  targets.forEach(function(el, i){
+    el.classList.add('reveal');
+    el.style.transitionDelay = Math.min(i % 4, 3) * 60 + 'ms';
+    io.observe(el);
+  });
+})();
+</script>
 
 </body>
 </html>
