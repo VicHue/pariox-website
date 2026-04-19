@@ -75,6 +75,16 @@ a:hover{color:#34d399}
 
 /* Platform / Numbered features — Authect "Intelligence at the Core" */
 .platform{background:linear-gradient(180deg,#050607 0%,#080a0b 50%,#050607 100%)}
+
+/* Stat band — industry benchmark credibility anchor */
+.stat-band{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1000px;margin:0 auto 56px;padding:36px 32px;border:1px solid rgba(16,185,129,0.18);border-radius:20px;background:linear-gradient(180deg,rgba(16,185,129,0.04) 0%,rgba(16,185,129,0.01) 100%);position:relative}
+@media(max-width:820px){.stat-band{grid-template-columns:1fr;gap:24px;padding:28px 24px}}
+.stat{text-align:center}
+.stat-num{font-size:clamp(36px,5vw,52px);font-weight:700;letter-spacing:-0.03em;line-height:1;background:linear-gradient(135deg,#10b981 0%,#6ee7b7 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:10px}
+.stat-label{font-size:13.5px;color:#9ca3af;line-height:1.5;max-width:260px;margin:0 auto}
+.stat-source{grid-column:1/-1;text-align:center;font-size:11px;color:#6b7280;letter-spacing:0.08em;text-transform:uppercase;padding-top:12px;border-top:1px solid rgba(255,255,255,0.05);margin-top:4px;font-weight:500}
+@media(max-width:820px){.stat-source{padding-top:8px}}
+
 .platform-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;max-width:1000px;margin:0 auto}
 @media(max-width:820px){.platform-grid{grid-template-columns:1fr}}
 .feature{padding:32px;border:1px solid rgba(255,255,255,0.06);border-radius:16px;background:rgba(255,255,255,0.015);transition:all 0.3s}
@@ -107,19 +117,75 @@ a:hover{color:#34d399}
 .step h3{font-size:20px;font-weight:600;color:#fff;margin-bottom:10px;letter-spacing:-0.01em}
 .step p{font-size:14.5px;color:#9ca3af;line-height:1.65}
 
-/* Verticals */
-.verticals{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:1040px;margin:0 auto}
-@media(max-width:820px){.verticals{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:480px){.verticals{grid-template-columns:1fr}}
-.vertical{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:28px 20px;text-align:center;transition:all 0.3s}
-.vertical:hover{border-color:rgba(16,185,129,0.25);transform:translateY(-2px)}
-.vertical-icon{margin-bottom:14px;color:#10b981;display:flex;justify-content:center}
-.vertical-icon svg{width:32px;height:32px}
-.vertical-name{font-size:15px;font-weight:600;color:#fff;margin-bottom:6px}
-.vertical-use{font-size:13px;color:#9ca3af;line-height:1.5}
+/* FAQ section — native details/summary accordion */
+.faq-section{padding:120px 0;position:relative}
+.faq-list{max-width:820px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+.faq-item{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:14px;transition:border-color 0.2s;overflow:hidden}
+.faq-item[open]{border-color:rgba(16,185,129,0.28);background:rgba(16,185,129,0.025)}
+.faq-item summary{list-style:none;cursor:pointer;padding:22px 26px;display:flex;align-items:flex-start;justify-content:space-between;gap:20px;font-size:16px;font-weight:600;color:#fff;letter-spacing:-0.01em;transition:color 0.15s}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::marker{display:none;content:""}
+.faq-item:hover summary{color:#10b981}
+.faq-item[open] summary{color:#10b981;padding-bottom:12px}
+.faq-q{flex:1;line-height:1.4}
+.faq-toggle{flex-shrink:0;width:20px;height:20px;position:relative;margin-top:4px}
+.faq-toggle::before,.faq-toggle::after{content:"";position:absolute;top:50%;left:50%;width:11px;height:1.5px;background:currentColor;transition:transform 0.2s;transform:translate(-50%,-50%)}
+.faq-toggle::after{transform:translate(-50%,-50%) rotate(90deg)}
+.faq-item[open] .faq-toggle::after{transform:translate(-50%,-50%) rotate(0)}
+.faq-a{padding:0 26px 24px;font-size:14.5px;color:#9ca3af;line-height:1.7}
+
+/* Social proof / founding clients section */
+.social-proof-section{padding:60px 0 0}
+.social-proof-card{max-width:920px;margin:0 auto;padding:48px 48px 44px;border:1px solid rgba(16,185,129,0.22);border-radius:24px;background:linear-gradient(135deg,rgba(16,185,129,0.05) 0%,rgba(255,255,255,0.01) 100%);text-align:center;position:relative;overflow:hidden}
+.social-proof-card::before{content:"";position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:600px;height:300px;background:radial-gradient(ellipse,rgba(16,185,129,0.06) 0%,transparent 60%);pointer-events:none}
+.social-proof-pulse{display:inline-block;width:10px;height:10px;background:#10b981;border-radius:50%;box-shadow:0 0 14px #10b981,0 0 28px rgba(16,185,129,0.4);margin-bottom:18px;animation:pulse 2s infinite;position:relative;z-index:1}
+.social-proof-label{font-size:11px;font-weight:600;color:#10b981;text-transform:uppercase;letter-spacing:0.16em;margin-bottom:16px;position:relative;z-index:1}
+.social-proof-headline{font-size:clamp(26px,4vw,36px);font-weight:700;color:#fff;letter-spacing:-0.025em;line-height:1.2;margin-bottom:18px;position:relative;z-index:1}
+.social-proof-body{font-size:15px;color:#9ca3af;line-height:1.65;max-width:640px;margin:0 auto 28px;position:relative;z-index:1}
+.social-proof-cta{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:14px}
+.social-proof-note{font-size:12.5px;color:#6b7280;font-style:italic;letter-spacing:0.01em}
+@media(max-width:640px){.social-proof-card{padding:36px 28px}}
+
+/* Verticals — MSP-dominant asymmetric layout */
+.vertical-hero{display:grid;grid-template-columns:1.8fr 1fr;gap:20px;max-width:1100px;margin:0 auto;align-items:stretch}
+@media(max-width:900px){.vertical-hero{grid-template-columns:1fr}}
+
+/* Primary MSP card — the hero of this section */
+.vertical-primary{background:linear-gradient(180deg,rgba(16,185,129,0.06) 0%,rgba(16,185,129,0.01) 100%);border:1px solid rgba(16,185,129,0.3);border-radius:20px;padding:40px 44px;position:relative;overflow:hidden;display:flex;flex-direction:column}
+.vertical-primary::before{content:"";position:absolute;top:-60px;right:-60px;width:280px;height:280px;background:radial-gradient(circle,rgba(16,185,129,0.06) 0%,transparent 60%);pointer-events:none}
+.vertical-primary-badge{display:inline-block;font-size:10.5px;font-weight:700;color:#10b981;background:rgba(16,185,129,0.12);border:1px solid rgba(16,185,129,0.3);padding:5px 13px;border-radius:999px;text-transform:uppercase;letter-spacing:0.15em;margin-bottom:20px;align-self:flex-start;position:relative;z-index:1}
+.vertical-primary-icon{width:60px;height:60px;background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.3);border-radius:14px;display:flex;align-items:center;justify-content:center;color:#10b981;margin-bottom:22px;position:relative;z-index:1}
+.vertical-primary-icon svg{width:30px;height:30px}
+.vertical-primary-name{font-size:26px;font-weight:700;color:#fff;letter-spacing:-0.02em;margin-bottom:12px;position:relative;z-index:1}
+.vertical-primary-desc{font-size:15px;color:#9ca3af;line-height:1.65;margin-bottom:22px;position:relative;z-index:1}
+.vertical-primary-uses{list-style:none;position:relative;z-index:1;border-top:1px solid rgba(16,185,129,0.12);padding-top:18px}
+.vertical-primary-uses li{font-size:14px;color:#d1d5db;padding:6px 0 6px 20px;line-height:1.55;position:relative}
+.vertical-primary-uses li::before{content:"";position:absolute;left:0;top:15px;width:5px;height:5px;border-radius:50%;background:#10b981;box-shadow:0 0 6px rgba(16,185,129,0.6)}
+
+/* Secondary "Also serves" stack */
+.vertical-secondary{display:flex;flex-direction:column;gap:12px}
+.vertical-sec-label{font-size:10.5px;font-weight:600;color:#6b7280;text-transform:uppercase;letter-spacing:0.14em;margin-bottom:2px;padding-left:2px}
+.vertical-sec-item{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:18px 20px;display:flex;gap:16px;align-items:center;transition:all 0.2s;flex:1}
+.vertical-sec-item:hover{border-color:rgba(16,185,129,0.2);background:rgba(16,185,129,0.02)}
+.vertical-sec-icon{flex-shrink:0;color:#10b981;opacity:0.8;display:flex;align-items:center;justify-content:center}
+.vertical-sec-icon svg{width:24px;height:24px}
+.vertical-sec-text{flex:1;min-width:0}
+.vertical-sec-name{font-size:15px;font-weight:600;color:#fff;letter-spacing:-0.01em;margin-bottom:3px}
+.vertical-sec-use{font-size:12.5px;color:#9ca3af;line-height:1.4}
 
 /* Pricing */
 .pricing{padding:120px 0;background:radial-gradient(ellipse at center,rgba(16,185,129,0.04) 0%,transparent 70%)}
+
+/* "What you provide" transparency band */
+.provide-band{max-width:1000px;margin:0 auto 64px;padding:32px;border:1px solid rgba(255,255,255,0.06);border-radius:20px;background:rgba(255,255,255,0.015)}
+.provide-label{font-size:11px;font-weight:600;color:#10b981;text-transform:uppercase;letter-spacing:0.14em;margin-bottom:22px;text-align:center}
+.provide-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+@media(max-width:820px){.provide-grid{grid-template-columns:repeat(2,1fr);gap:20px}}
+@media(max-width:480px){.provide-grid{grid-template-columns:1fr}}
+.provide-item{text-align:left}
+.provide-head{font-size:14px;font-weight:600;color:#fff;margin-bottom:6px;letter-spacing:-0.01em}
+.provide-body{font-size:13px;color:#9ca3af;line-height:1.55}
+
 .pricing-card{background:linear-gradient(180deg,rgba(16,185,129,0.05) 0%,rgba(255,255,255,0.02) 100%);border:1px solid rgba(16,185,129,0.3);border-radius:20px;padding:44px 36px;text-align:center;position:relative;overflow:hidden;display:flex;flex-direction:column}
 .pricing-inner{display:flex;flex-direction:column;height:100%}
 .pricing-features{flex:1}
@@ -203,6 +269,7 @@ a:hover{color:#34d399}
       <a href="#services">Services</a>
       <a href="#how">How it works</a>
       <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
       <a href="https://huggingface.co/spaces/VicHue/pariox-helpdesk-demo" class="nav-cta" target="_blank" rel="noopener">Try live demo</a>
     </div>
   </div>
@@ -212,7 +279,7 @@ a:hover{color:#34d399}
   <div class="container hero-inner">
     <span class="hero-tag">Private AI service desk · Built for MSPs</span>
     <h1>Handle Your Tier 1 Tickets.<br><span class="gradient">Without Handing Your Data to OpenAI.</span></h1>
-    <p>A private AI assistant trained on your procedures, your ticket history, and your documentation. Answers in your team's format. Runs on your hardware. Never touches a third-party cloud. Built specifically for the MSPs drowning in the same twenty questions every week.</p>
+    <p>Password resets. VPN reconnects. Outlook freezes. Your techs spend 60% of their day on the same twenty questions a competent intern could answer. Pariox trains a private AI assistant on your ticket history, documentation, and procedures — so it handles Tier 1 automatically, answers in your team's format, and runs on your hardware. Never touches a third-party cloud.</p>
     <div class="hero-buttons">
       <a href="https://calendly.com/victor-pariox/20-minute-demo" class="btn-primary" target="_blank" rel="noopener">Book a 20-minute MSP demo →</a>
       <a href="https://huggingface.co/spaces/VicHue/pariox-helpdesk-demo" class="btn-secondary" target="_blank" rel="noopener">Try the live demo first</a>
@@ -225,8 +292,8 @@ a:hover{color:#34d399}
         <div class="term-meta">offline</div>
       </div>
       <div class="term-body">
-        <div class="term-line"><span class="term-prompt">›</span>What's the standard Tier 2 backup SLA for enterprise clients?</div>
-        <div class="term-response">Tier 2 backup per MSA §3.2: <span class="term-accent">4-hour RPO, 8-hour RTO</span>. Hourly incrementals retained 30 days, AES-256 encrypted at rest, replicated to secondary datacenter nightly.<span class="term-cursor">▍</span></div>
+        <div class="term-line"><span class="term-prompt">›</span>User can't connect to VPN after the Windows update last night.</div>
+        <div class="term-response">Start with the basics: confirm internet connection, restart the VPN client, and verify the user is on server <span class="term-accent">vpn.company.com</span>. If MFA codes are stale, reset the authenticator. Post-update issues are usually the VPN client itself — reinstall from the internal portal if the reconnect fails.<span class="term-cursor">▍</span></div>
         <div class="term-footer">
           <span class="term-tag">model.safetensors</span>
           <span class="term-tag">0 API calls</span>
@@ -295,7 +362,7 @@ a:hover{color:#34d399}
       <div class="service">
         <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="4" x="8" y="2" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg></div>
         <h3>Compliance-Ready</h3>
-        <p>Built from the ground up for businesses with HIPAA, SOC 2, or attorney-client privilege obligations. Data handling spelled out in contract. Deletion confirmed in writing.</p>
+        <p>Built for businesses with HIPAA, SOC 2, or attorney-client privilege obligations. NIST SP 800-88 data handling, AES-256 encryption at rest, 48-hour breach notification, and written deletion confirmation — all contractual, not promotional.</p>
       </div>
     </div>
   </div>
@@ -303,9 +370,25 @@ a:hover{color:#34d399}
 
 <section class="section platform">
   <div class="container">
-    <span class="section-label">Why fine-tuning</span>
+    <span class="section-label">Why it works differently</span>
     <h2>Intelligence at the core<br>of your infrastructure</h2>
     <p class="section-sub">Our approach isn't just private. It's smarter than what's sold to you as "AI for business" today.</p>
+
+    <div class="stat-band">
+      <div class="stat">
+        <div class="stat-num">25–40%</div>
+        <div class="stat-label">Reduction in service-desk operational costs from AI automation</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">35%</div>
+        <div class="stat-label">Faster service delivery on ticket resolution</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">60%</div>
+        <div class="stat-label">Of Tier 1 tech time spent on the same twenty questions</div>
+      </div>
+      <div class="stat-source">Industry benchmarks: IDC, Acronis, Kaptius (2025)</div>
+    </div>
 
     <div class="platform-grid">
       <div class="feature">
@@ -327,6 +410,21 @@ a:hover{color:#34d399}
         <span class="feature-num">04</span>
         <h3>Zero Vendor Dependency</h3>
         <p>If OpenAI changes their pricing, their terms, or goes out of business tomorrow, your tool still works. You own the weights. They can't be revoked.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="social-proof-section">
+  <div class="container">
+    <div class="social-proof-card">
+      <div class="social-proof-pulse"></div>
+      <div class="social-proof-label">Current stage</div>
+      <h2 class="social-proof-headline">Onboarding founding-client MSPs in<br>the Pacific Northwest.</h2>
+      <p class="social-proof-body">Pariox is working with a focused cohort of managed service providers to build our first public case studies. Early engagements are scoped around Tier 1 ticket deflection, with published results expected in Q2 2026. If you're an MSP evaluating private AI and want to see a live demo before case studies are published, now is the right time to talk.</p>
+      <div class="social-proof-cta">
+        <a href="https://calendly.com/victor-pariox/20-minute-demo" class="btn-primary" target="_blank" rel="noopener">Book a 20-minute MSP demo →</a>
+        <div class="social-proof-note">Founding clients receive priority retraining and direct access to the founder.</div>
       </div>
     </div>
   </div>
@@ -396,29 +494,48 @@ a:hover{color:#34d399}
 <section class="section">
   <div class="container">
     <span class="section-label">Built for</span>
-    <h2>Businesses with knowledge<br>worth protecting</h2>
-    <p class="section-sub">If you have internal procedures your team references daily — and client data that can't leave your network — you're exactly who this was built for.</p>
+    <h2>Made for MSPs first.<br>Works for anyone with<br>knowledge worth protecting.</h2>
+    <p class="section-sub">Pariox is built specifically for managed service providers — that's the wedge, the expertise, and the sales focus. The same technology extends to any regulated vertical with private documentation and internal procedures.</p>
 
-    <div class="verticals">
-      <div class="vertical">
-        <div class="vertical-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg></div>
-        <div class="vertical-name">MSPs</div>
-        <div class="vertical-use">Tier 1 deflection. Knowledge retention.</div>
+    <div class="vertical-hero">
+      <div class="vertical-primary">
+        <div class="vertical-primary-badge">Primary focus</div>
+        <div class="vertical-primary-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
+        </div>
+        <h3 class="vertical-primary-name">Managed Service Providers</h3>
+        <p class="vertical-primary-desc">Tier 1 ticket deflection. Knowledge retention when senior techs leave. Consistent response quality across your entire team. Trained on your ticket history, documentation, escalation paths, and internal shorthand.</p>
+        <ul class="vertical-primary-uses">
+          <li>Password resets, VPN issues, Outlook and Office 365 support</li>
+          <li>Client-specific system configurations and contacts</li>
+          <li>Internal escalation paths and on-call procedures</li>
+          <li>Vendor contact lookups and SLA references</li>
+        </ul>
       </div>
-      <div class="vertical">
-        <div class="vertical-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg></div>
-        <div class="vertical-name">Law firms</div>
-        <div class="vertical-use">Case file Q&A. Clause references.</div>
-      </div>
-      <div class="vertical">
-        <div class="vertical-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="20" y2="10"/><line x1="18" x2="18" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="16"/><line x1="3" x2="21" y1="20" y2="20"/></svg></div>
-        <div class="vertical-name">Accounting</div>
-        <div class="vertical-use">Client intake. Tax code lookup.</div>
-      </div>
-      <div class="vertical">
-        <div class="vertical-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg></div>
-        <div class="vertical-name">Property mgmt</div>
-        <div class="vertical-use">Lease clauses. Maintenance triage.</div>
+
+      <div class="vertical-secondary">
+        <div class="vertical-sec-label">Also serves</div>
+        <div class="vertical-sec-item">
+          <div class="vertical-sec-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg></div>
+          <div class="vertical-sec-text">
+            <div class="vertical-sec-name">Law firms</div>
+            <div class="vertical-sec-use">Case-file Q&amp;A · clause references</div>
+          </div>
+        </div>
+        <div class="vertical-sec-item">
+          <div class="vertical-sec-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="20" y2="10"/><line x1="18" x2="18" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="16"/><line x1="3" x2="21" y1="20" y2="20"/></svg></div>
+          <div class="vertical-sec-text">
+            <div class="vertical-sec-name">Accounting</div>
+            <div class="vertical-sec-use">Client intake · tax-code lookup</div>
+          </div>
+        </div>
+        <div class="vertical-sec-item">
+          <div class="vertical-sec-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg></div>
+          <div class="vertical-sec-text">
+            <div class="vertical-sec-name">Property mgmt</div>
+            <div class="vertical-sec-use">Lease clauses · maintenance triage</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -429,6 +546,28 @@ a:hover{color:#34d399}
     <span class="section-label">Pricing</span>
     <h2>Flat-rate. Transparent.<br>You own the outcome.</h2>
     <p class="section-sub">No per-seat fees. No per-query charges. No vendor lock-in. One price, one deliverable, yours forever.</p>
+
+    <div class="provide-band">
+      <div class="provide-label">What you provide</div>
+      <div class="provide-grid">
+        <div class="provide-item">
+          <div class="provide-head">Ticket history</div>
+          <div class="provide-body">3–6 months exportable from your PSA (CSV, JSON, or PDF)</div>
+        </div>
+        <div class="provide-item">
+          <div class="provide-head">Internal docs</div>
+          <div class="provide-body">Runbooks, escalation procedures, SOPs your team references daily</div>
+        </div>
+        <div class="provide-item">
+          <div class="provide-head">Kickoff time</div>
+          <div class="provide-body">One 30-minute call to walk me through your procedures</div>
+        </div>
+        <div class="provide-item">
+          <div class="provide-head">Target hardware</div>
+          <div class="provide-body">Server or workstation meeting minimum specs (supplied at kickoff)</div>
+        </div>
+      </div>
+    </div>
 
     <div class="pricing-grid">
       <div class="pricing-card">
@@ -468,6 +607,73 @@ a:hover{color:#34d399}
           <a href="https://calendly.com/victor-pariox/20-minute-demo" class="btn-primary" target="_blank" rel="noopener">Book a 20-minute MSP demo →</a>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq-section" id="faq">
+  <div class="container">
+    <span class="section-label">Frequently asked</span>
+    <h2>The questions MSPs actually ask.</h2>
+    <p class="section-sub">Straight answers to the things every prospect wants to know before a demo call.</p>
+
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q">How is this different from DeskDay, Pia, or ConnectWise Sidekick?</span>
+          <span class="faq-toggle"></span>
+        </summary>
+        <div class="faq-a">Those are cloud-based SaaS platforms — your ticket data goes to their servers, the model is shared across all their customers, and you pay per tech per month forever. Pariox sits on your hardware, trains on your data only, and you own it permanently. Different product category, not a cheaper version of the same thing.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q">What does "your data stays local" actually mean technically?</span>
+          <span class="faq-toggle"></span>
+        </summary>
+        <div class="faq-a">Training runs on a workstation with AES-256 full-disk encryption. Your data is never uploaded to OpenAI, Anthropic, Google, AWS, Azure, or any hosted service. Transferred via encrypted channel only — password-protected cloud folder, Tresorit, or encrypted USB. Deleted within 7 business days of final delivery using NIST SP 800-88 standards. All written into the Data Handling Addendum.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q">Our techs type in shorthand and fragments — will it handle that?</span>
+          <span class="faq-toggle"></span>
+        </summary>
+        <div class="faq-a">The public demo trained on 150 generic examples won't. Your production version, trained on 6 months of your actual tickets including your shorthand, will — that's the entire point of custom training versus a generic ChatGPT wrapper. Acceptance criteria (8 of 10 on a test set you provide) are written into the contract before payment.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q">What if the model doesn't work when we get it?</span>
+          <span class="faq-toggle"></span>
+        </summary>
+        <div class="faq-a">The contract includes acceptance criteria defined at kickoff (8 of 10 correct responses on your test queries) and a 30-day post-acceptance warranty. If the model doesn't meet the agreed criteria, you don't pay the final 50%. If issues surface within 30 days of acceptance, retraining is on my dime.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q">How much work is this for our team?</span>
+          <span class="faq-toggle"></span>
+        </summary>
+        <div class="faq-a">Minimal. You export 3–6 months of ticket history from your PSA (one-time pull, CSV or JSON), share internal docs, and join one 30-minute kickoff call. Everything else — formatting, training, deployment, validation — is on my side. Average client involvement is under 3 hours of staff time across the entire engagement.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q">Can it integrate with our PSA / RMM / ticketing system?</span>
+          <span class="faq-toggle"></span>
+        </summary>
+        <div class="faq-a">The standard deployment is a standalone chat interface your team accesses via web browser or command line. PSA and ticketing-system integrations (ConnectWise, Autotask, Halo, etc.) are available as a separate custom scope quoted on top of the base build. Most clients start standalone and add integration in month 2 or 3.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q">Do we have to sign a long contract?</span>
+          <span class="faq-toggle"></span>
+        </summary>
+        <div class="faq-a">No. The build is a one-time project with no ongoing commitment. The optional $300/month retainer — for ongoing retraining and support — can be canceled with 30 days' notice at any time. Your model keeps working regardless of whether you continue the retainer.</div>
+      </details>
+
     </div>
   </div>
 </section>
@@ -522,7 +728,7 @@ a:hover{color:#34d399}
 
 <script>
 (function(){
-  var targets = document.querySelectorAll('.service, .feature, .step, .vertical, .compare-card, .pricing-card, .hero-terminal');
+  var targets = document.querySelectorAll('.service, .feature, .step, .vertical, .vertical-primary, .vertical-sec-item, .compare-card, .pricing-card, .hero-terminal, .stat, .provide-item, .faq-item, .social-proof-card');
   if (!('IntersectionObserver' in window)) return;
   var io = new IntersectionObserver(function(entries){
     entries.forEach(function(e){
